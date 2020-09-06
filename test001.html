@@ -1,0 +1,700 @@
+<html>
+    <head>
+        <title>Teste Teste Teste aaaakkkk</title>
+    </head>
+    <body>
+		<p id="demo"></p>
+        <!-- Javascript
+             - Permite que a gente acesse elementos de interação do 
+             cliente sem ele precisar atualizar a pagina (como em php ou ruby)
+             - É aplicado em muitos sites (usado em front end)
+             - É recomendavel colocar o codigo JS dentro do body e no final da 
+             tag, porque o JS executa os elementos da arvore, e se nao estiver
+             carregado antes, pode dar erro ou ser preciso carregar de novo-->
+
+        <!--Variaveis
+            -Nao precisa definir o tipo da variavel (sem tipgem estatica e sim
+            tipagem dinamica)-->
+
+        <script>
+			//STRICT MODE: deixa o JS mais rigoroso. Declarado no topo de arquivos ou funcoes
+			//Elimina alguns erros silenciosos do JavaScript fazendo-os lançar exceções
+			//obs: concatenar scripts strict e não-strict é problemático
+			
+			'use strict';	
+            console.log('Hello World'); //escreve no depurador
+            var nome = "HMMMM KKKK BJSSSSS";
+            var idade = 87;
+            var peso = 90.6;
+            var humano = true;            
+
+            ///////////////////////OPERACOES MATEMATICAS////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            var x = 10, y = 5;
+            x+=3;
+            var resultado = x + y;
+            console.log(x);
+            console.log(resultado);
+
+            console.log(typeof 5);
+            console.log(typeof -2);
+            console.log(typeof 10.7);
+            console.log(typeof Infinity);
+            console.log(typeof -Infinity);
+            console.log(typeof NaN);
+
+            ///////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////FUNCOES//////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////
+            function soma(num1, num2){
+                var res = num1+num2; // Variavel local
+                return res;
+            }
+            var res = soma(3,6);
+            console.log(res);
+
+            function mimDa(v1){
+                return "Ola, " + v1 + ", SUA OTARIAAAAAAA"
+            }
+            const kkbj = mimDa("Raquel"); //CONST - variavel cujo valor eh fixo
+            alert(kkbj);
+            //REST: operador que permite a uma fucao receber indefinidos parametros
+            function mostraNum(...args){
+                for(let i=0; i < args.length; i++){
+                    console.log(args[i]);
+                }
+            }
+            mostraNum(2,4,5,6,3,2324234,5,12,3,23,5,4,54,56,4,6456,342,43);
+			
+			//OBS: NAO é possível adicionar posteriormente novos elementos a uma funcao CONSTRUTOR
+			function construcao(va1,va2,va3){
+				this.va1 = va1;
+				this.va2 = va2;
+				this.va3 = va3;
+			}
+			construcao.v4 = 4;
+			var coisinha = new construcao(1,2,3);
+			//document.getElementById("demo").innerHTML = "valor: " + coisinha.v4; //da erro de compilacao
+			//console.log("valor de v4: " + coisinha.v4); //da erro de compilacao
+			
+
+            //////////////////////CONDICIONAIS///////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            function twoNE1(member){
+                if(member == 'parkbom'){
+                    //"==" - verifica se as variaveis são iguais. Ex 1 == "1" é true.
+                    //"===" verifica se as variaveis e seus tipos são iguais 1=== "1" eh false
+                    //porque apesar de valores de variaveis iguais são de tipos diferentes.
+                    return 'Park Bom rica e poderosissima';
+                } else if(member =='cl'){
+                    return 'CL The baddest female';
+                }else if(member == 'dara'){
+                    return 'dara cabelin kkkkk';
+                }else if(member == 'minzy'){
+                    return 'minzy maknae da nacao';
+                }else{
+                    return 'come back home';
+                }
+            }
+            var tueneON = twoNE1('parkbom');
+            console.log(tueneON);
+
+            //////////////////////OPERADORES LOGICOS///////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            var soshi = 'snsd';
+            var gg = (soshi === 'snsd'); //esse comando substitui o seguinte comando
+            /*
+            *var soshi = 'snsd';
+            *if(soshi === 'snsd'){
+            *   soshi = true;  
+            *}else{
+            *   soshi = false; 
+            *}
+            * */
+            console.log(gg);
+
+            //////////////////////CONDICAO TERNARIA///////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            var ladygaga = 'artpop';
+            var melhorAlbum = (ladygaga === 'artpop') ? true : false;
+            console.log(melhorAlbum);
+
+            //////////////////////ESTRUTURAS DE REPETICAO///////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            var j = 0;
+            while(j<10){
+                console.log(j);
+                j++;
+            }
+            for(; j > 0; j--){
+                console.log(j);
+            }
+            //////////////////////INTERVALO E TIMEOUT///////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            function theBEST(){
+                console.log('내가 제일 잘 나가');
+            }
+            setTimeout(theBEST, 1000); //funcao ou expressao executa depois do tempo estipulado
+            setInterval(theBEST, 1000); //funcao ou expressao repete a cada intervalo de tempo
+            
+            /*
+            *nao eh  theBEST() e sim theBEST mesmo, porque com () ele estaria EXECUTANDO a
+            *funcao e queremos usar ela apenas como REFERENCIA, passsar ela como parametro 
+            * */
+
+            //////////////////////FUNCAO PROMPT E ALERT///////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            let ano = prompt("Diz ai tua idade: ");
+            alert(ano);
+            let n = prompt("Diz ai teu nome: ");
+            alert("Entao seu nome eh " + n);
+            alert("VAI CAGAR, CARAI!!!!!!!!!!");
+
+            /*
+            *OBS SOBRE O LET: permite que se crie variaveis de escopo limitado
+            *o contrário do que se poderia supor, em Javascript blocos não possuem escopo como 
+            *em outras linguagens, somente funções têm! Isso quer dizer que mesmo uma váriavel 
+            *definida com a keyword var dentro de um bloco de instrução if, será visível no resto 
+            *inteiro da função.
+            */
+            
+            //////////////////////FUNCAO ARROW///////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            /*
+            *funcao atrelada a uma variavelcujo cabecalho eh:
+            *const nomeDaFuncao = (parametro) =>{escreve a funcao aqui};
+            */
+
+            let cu = (cuuu) => {
+                return cuuu;
+            };
+            alert(cu("VAI TOMA NO CUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"));
+
+            //////////////////////SOBRE ARGUMENTOS DAS FUNCOES///////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            //Podemos chamar uma funcao sem passar todos os parametros como argumentos
+            function soma3num(n1, n2, n3){
+                if(n1 === undefined || n2 === undefined || n3 === undefined){
+                    console.log("VOCE PRECISA DOS TRES ARGUMENTOS.");
+                }else{
+                    return n1 + n2 + n3;
+                }
+            }
+            console.log(soma3num(2));
+            console.log(soma3num(2,5));
+            console.log(soma3num(2,6,7));
+
+            //ARGUMETO COM VALOR DEFAULT = ja tem um valor padrao mas vc pode mudar
+            function babado(frase, rs="EH BABADO"){
+                return frase + rs;
+            }
+            console.log(babado("Olha mlr essa vida "));
+            console.log(babado("Olha mlr essa vida ", "AIAI SEI NAI VISS"));
+
+            /////////////////////////////////CLOSURE///////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            //funcao que se lembra do ambiente em q foi criada - CONCEITO MAIS AVANCADO
+            function somador(x){
+                return function(y){
+                    return x + y;
+                }
+            }
+
+            let soma1 = somador(3);
+            console.log(soma1(7));
+
+            /////////////////////////////////RECURSAO//////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            //permite a funcao se chamar - OBS: pode ser mt pesado
+            function loopImPar(numer){
+                if(numer-1 < 2){
+                    console.log("recursao parou");
+                }else if(numer%2 != 0){
+                    console.log("NUMERO IMPAR");
+                    loopImPar(numer-1);
+                }else{
+                    console.log("NUMERO PAR " + numer);
+                    loopImPar(numer-2);
+                }
+            }
+            loopImPar(31);
+
+            ////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////ARRAYS//////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            //conjunnto de valores de uma variavel, pode ser de varios tipos
+            let arrayMisturado = [1, "batata", false];
+            console.log(arrayMisturado[arrayMisturado.length - 1]);// acessar ultimo elemento do array
+            /*
+            *OBS: DIFERENCA ENTRE PROPRIEDADE E METODO
+            *variavel.propriedade; //propriedade
+            *variavel.metodo(); //metodo
+            */
+            var alunos = ['CL', 'Park bom', 'Dara', 'Minzy']; //array - inicia no 0
+            console.log(alunos);
+            console.log(alunos[1]); //acessando info especifica de um VETOR
+            //metodos PUSH(inserir elemento no FIM do array) e POP(remover o elemento do FIM doarray)
+            alunos.push('김효연');
+            console.log(alunos);
+            let remove = alunos.pop();
+            console.log(alunos);
+            //SHIFT (remove primeiro elemento) e UNSHIFT (add 1 ou mais elementos no inicio do array)
+            alunos.unshift('김예림');
+            console.log(alunos);
+            alunos.shift();
+            console.log(alunos);
+            //INDEXOF (procura o indice de um elemento no array) 
+            //LASTINDEXOF (procura ulima ocorrencia de um elemento no array)
+            console.log(alunos.indexOf('CL'));
+            console.log(alunos.lastIndexOf('Dara'));
+            //SLICE: retorna a copia de parte de um subarray criado a partir de um array
+            console.log(alunos.slice(1,3));
+            console.log(alunos.slice(-2));
+            //FOREACH: itera cada elemento do array. Lembra um loop for ou while, mas eh nativo de JS
+            alunos.forEach(tn1 => {
+                console.log("Integrante do 2NE1 " + tn1);
+            });
+            //INCLUDES: procura se um array possui determinado elemento
+            console.log(alunos.includes('CL'));
+            console.log(alunos.includes('SWWW'));
+            //REVERSE: inverte a ordem o array
+            console.log(alunos.reverse());
+            //JOIN: junta elementos de um array numa frase (transforma numa string)
+            let mamamoo = ["SOLAR","MOONBYU","WHEEIN","HWASA"];
+            console.log(mamamoo.join(" "));
+            //DESTRUCTING: faz a msm coisa q faz com objetos
+            let efex = ["Amber", "Sulli", "Victoria", "Luna", "Krystal"];
+            let [nom1, nom2, nom3, nom4, nom5] = efex;
+            console.log(nom4 + " " + nom5);
+
+
+            ////////////////////////////////////////////////////////////////////////////////
+            //////////////////////OBJETOS///////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            //colecao de propriedades e podem ser acessados. Possui a seguinte estrutura:
+            var redVelvet = {
+                nome: 'Irene', //chave: 'valor'
+                idade: 29,
+                peso: 50,
+                humano: true,
+            }; //objeto - tipo os em java
+            console.log(redVelvet);
+            console.log(redVelvet.nome); // acessando info especifica de um OBJETO
+            delete redVelvet.humano; //removeu essa propriedade
+            console.log(redVelvet);
+            redVelvet.funcao = "lider"; //add nova funcao
+            console.log(redVelvet);
+            //copiando as propriedades de um objeto para outro
+            var ggKpop = {
+                nome: "Chaeryeong",
+                idade:21,
+                cidade: "Jeonju",
+            }
+            Object.assign(ggKpop, redVelvet); //copia as infos do segundo pro primeiro
+            console.log(redVelvet);
+            console.log(ggKpop);
+            //verificando as chaves que o objeto possui
+            console.log(Object.keys(redVelvet)); 
+            //Mutacao: um objeto herda as caracteristicas do outro ainda referenciando o antigo
+            var ggKpop3 = {
+                nome: "권민아",
+                idade: 26,
+                cidade: "부산",
+            }
+            var ggKpop4 = {
+                nome: "임나연",
+                idade: 24,
+                cidade: "서울",
+            }
+            console.log(ggKpop3);
+            console.log(ggKpop4);
+            ggKpop3 = ggKpop4;
+            ggKpop3.nome = "임윤아";
+            console.log(ggKpop3.nome);
+            console.log(ggKpop4.nome);
+            ggKpop4.nome = "권민아";
+            console.log(ggKpop3.nome);
+            console.log(ggKpop4.nome);
+
+            //DESTRUCTING: definindo variaveis de objetos de forma mais rapida
+            //por exemplo, vamos definir variaveis a pardir do objeto redVelvet
+            const {nome: rNome, idade: rIdade, peso: rPeso, humano: rHumano} = redVelvet;
+            console.log(rNome);
+            console.log(rIdade);
+            console.log(rPeso);
+            console.log(rHumano); //obs:da undefined pq tiramos a propriedade com delete (linha 261)
+            //Colocando funcoes nos objetos
+            let rVelvet = {
+                badBoy: function(){
+                    return "OH MY GODDD HES A REALLY BAD BOY - AAAAAAAA";
+                },
+                rookie: function(){
+                    return "ROOKIE ROOKIE MOSHI MOSHI";
+                },
+                dance: function(dancar){
+                    return "Elas estao dancando " + dancar;
+                }
+            }
+            alert(rVelvet.badBoy());
+            alert(rVelvet.dance("Ice Cream Cake"));
+
+            //////////////////////////////////////////////////////////////////////////////////
+            //////////////////////METODOS DAS STRINGS////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            //TRIM remove coisas que nao sao string
+            //pra mim parece q so tira os espacos do comeco e do final rs
+            let texto = '\n       234324       \nbabado      \niooeiyhoi        \n';
+            console.log(texto.trim());
+            //PADSTART: insere caracteres antes da string. Vamos usar a var da linha 20
+            let nomeDoido = nome.padStart(26,'B ')
+            console.log(nomeDoido); //(comprimento final do string, texto a acrescentar)
+            //SPLIT: divide uma string por separador e a transforma num array
+            let separar = nome.split(" ");
+            console.log(separar);
+            console.log(nomeDoido.split(" "));
+            //REPEAT: repete uma string o numero de vezes que for inserido
+            console.log('REPETIR\n'.repeat(6));
+
+            //////////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////JSON - JS object Notation/////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            //Usado para comunicacao entre servicos. Tipo de dado padronizado
+            //Nao possui metodos,apenas o nome do dado e o valor
+            //Essencial na comunicacao de servidores web pois a maioria deles usam arquivos JSON
+            var pessoa = {
+                "nome": "최수영",
+                "altura": 1.70,
+                "idade": 30,
+                "grupos": ["ROUTE 0", "SNSD"]
+            }
+            console.log(pessoa.idade);
+            console.log(pessoa.grupos);
+            //convertendo JSON para string - NAO consegue mais acessar as propriedades
+            let pessoaCho = JSON.stringify(pessoa);
+            console.log(pessoaCho);
+            console.log(pessoaCho.nome); // da undefined pq nao acessa mais as propriedades
+            //convertendo string para JSON - volta a acessar as propriedades
+            let pessoaJSON = JSON.parse(pessoaCho);
+            console.log(pessoaJSON);
+            console.log(pessoaJSON.altura);
+			
+			
+			//////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////PROTOTIPOS///////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+			//Basicamente um objeto de um objeto
+			//Prototype de um objeto criado do zero é o Object, que tem os metodos nativos da linguagem
+			//Cada objeto tem um link interno para um outro objeto chamado prototype. 
+			//Esse objeto prototype também tem um atributo prototype, e assim por diante até 
+			//o que o valor null seja encontrado como sendo o seu prototype.
+			//https://tableless.com.br/dominando-o-uso-de-prototype-em-javascript/
+			const indv = {
+				maos: 2,
+			}
+            console.log(Object.getPrototypeOf(indv));
+			console.log(indv.hasOwnProperty('maos'));
+			
+			const Nindv = Object.create(indv); //essa variavel vai herdar as propriedades do Object de individuo
+			console.log(Nindv.maos);
+			console.log(Nindv.hasOwnProperty('maos')); //nao possui a propriedade maos,mas consegue acessar a do prototype indiv
+			
+			//////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////CLASSES//////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////
+			//O prototype do JS pode ser chamado de classe
+			//Podemos criar diversos objetos em cima de um prototype
+			let cachorro = {
+				patas: 4,
+				marca: 'SRD',
+				latir: function(){
+					if(cachorro.marca == 'Frank Aguiar'){
+						console.log("AUUUUUUUUUUUUU");
+					}else{
+						console.log("au au");
+					}
+				}
+			}
+			
+			let cheetos = Object.create(cachorro);
+			cheetos.latir();
+			cheetos.marca = "cheetos";
+			console.log(cheetos.marca); //uma copia da variavel da classe
+			console.log(cachorro.marca); //a marca definida na classe permanece
+			
+			let fAguiar = Object.create(cachorro);
+			fAguiar.latir();
+			fAguiar.marca = "Frank Aguiar";
+			fAguiar.latir();
+			console.log(fAguiar.marca);
+			
+			//Instanciando classes por funcao, outra forma de instanciar objeto alem da forma acima
+			function criaDOGE(raca, patas, cor){
+				let cachorro = Object.create; //cria um objeto vazio
+				cachorro.raca = raca;
+				cachorro.patas = patas;
+				cachorro.cor = cor;
+				cachorro.latir = function(){
+					console.log("au au au");					
+				}
+				return cachorro;
+			}
+			let doguinho = criaDOGE("vira lata caramelo", 4, "caramelo");
+			console.log(doguinho);
+			doguinho.latir();
+			console.log(doguinho.raca);
+			console.log(doguinho.cor);
+			
+			//Instanciando classes usando new. MÉTODO MAIS USADO!!
+			function Dog(raca,patas,cor){
+				this.raca = raca;
+				this.patas = patas;
+				this.cor = cor;
+				this.uivar = function(){
+					console.log("auuuuuuuuuuuu");
+				}
+				this.latir = function(){
+					console.log("au au au au");
+				}
+			}
+			let cuteDog = new Dog("salsichinha", 3, "preto");
+			cuteDog.latir();
+			console.log(cuteDog);
+			console.log(Dog);
+			//Metodo Prototype: ao inves de deixar o metodo dentro da funcao, botamos pra fora usando prototype
+			//ajuda a deixar organizado, pois os métodos vao ficar separados do construtor
+			Dog.prototype.andar = function(){
+				console.log("cachorro andando");
+			}
+			cuteDog.andar();
+			
+			//Construtor na classe (ES6)
+			//Com o advento do ES6 não precisamos mais criar uma classe usando funcoes
+			
+			class DogLast{
+				constructor(raca, patas, cor){
+					this.raca = raca;
+					this.patas = patas;
+					this.cor = cor;
+				} //usando classes é melhor colocar os métodos fora do construtor
+				
+				//GET e SET
+				get getCor(){
+					return this.cor;
+				}				
+				set setCor(cor){
+					this.cor = cor;
+				}
+				
+				latir() { 
+					console.log('au au au au auuuu')
+				}
+			}
+			//Symbols: propriedades unicas que nao podem ser alteradas nem criadas duas vezes
+			//É como se fosse uma constante dentro das propriedades do objeto
+			let focinho = Symbol();
+			DogLast.prototype[focinho] = true;
+			
+			DogLast.prototype.raca = 'SRD'; //pode colocar um valor como padrao atraves do prototype
+			let pundo = new DogLast('pundo', 4, 'rosa');
+			console.log(pundo.raca);
+			console.log(DogLast.prototype.raca);
+			pundo.latir();
+			console.log(DogLast.prototype[focinho]); //acessando symbol
+			console.log(pundo[focinho]);
+			
+			//usando set e get
+			pundo.setCor = 'verdinho';
+			console.log(pundo.getCor);
+			
+			//HERANÇA: herdar propriedades de outras classes. Usamos o extends
+			class Mamifero{
+				constructor(patas,orelhas){
+					this.patas = patas;
+					this.orelhas = orelhas;
+				}
+			}
+			let cauda = Symbol();
+			Mamifero.prototype[focinho] = true;
+			Mamifero.prototype[cauda] = true;
+			
+			class Coelho extends Mamifero {
+				constructor(patas, raca){
+					super(patas, patas);
+					this.raca = raca;
+				}
+				
+				mordiscar(comida){
+					console.log("O coelho esta comendo " + comida);
+				}
+			}
+			let gigi = new Coelho(3, 'Angorá');
+			console.log(gigi.patas);
+			gigi.mordiscar('cenoura');
+			
+			//INSTANCEOF: podemos verificar quem se um objeto é pai do outro
+			console.log(new Coelho instanceof Mamifero);
+			console.log(gigi instanceof Mamifero);
+			console.log(Coelho instanceof Mamifero);
+			
+			//////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////BUGS E DEBUGS////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////
+
+            //Tratamento de input por funcao: tratar erros especificos usando funcoes
+            //Ex: checar se o usuario digitou apenas numeros
+            function checaNum(num){
+                //vamos transformar esse numero num tipo Number
+                let num3ro = Number(num);
+                
+                //obs: essa funcao reconhece boolean como Number afffff
+                if(Number.isNaN(num3ro)){
+                    console.log("Voce digitou valores que nao sao numeros. Tente novamente.");
+                }else{
+                    console.log("valor aceito: " + num3ro);
+                    return num3ro;
+                }                
+            }
+            checaNum(893276);
+            checaNum(false);	
+            checaNum('87yh98eth9e8');
+
+            //Excecoes: OBS quando eh encontrada o codigo todo para
+            // function saudacao(txt){
+            //     if(typeof txt != 'string'){
+            //         throw new Error('o valor escrito precisa ser uma string');
+            //     }else{
+            //         console.log('Ola ' + txt)
+            //     }
+            // }
+            // saudacao(29387498234);
+            // saudacao("creuza");
+            
+
+            //Try e Catch: verifica se algo deu certo ou errado. Util para degug
+            function testeTry(){
+                try{
+                    var ureyur = 4 + uhsduhu;
+                }catch(e){
+                    console.log(e);
+                }
+            }
+            testeTry();
+            console.log('babad999999');
+
+            //finally: executado independente do resultado do try catch
+            try{
+                let tter3342r3 = [1,3,4];
+                if(tter3342r3.length ==0)
+                for(var h = 0; h <= tter3342r3.length; h++){
+                    console.log(tter3342r3[h]);
+                }
+            }catch(e){
+                console.log(e);
+            }finally{
+                console.log('valor final de h: ' + h);
+            }
+
+            //////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////EXPRESSOES REGULARES/////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////
+            //Vamos verificar se determinada expressao tem numa frase
+            const reg = new RegExp('bola');
+            console.log(reg.test('ora bolas sempre olar'));
+            console.log(reg.test('nicole bol'));
+            console.log(reg.test('alha bolha bola pipa'));
+            //testando uma palavra sem botar nome de variavel
+            console.log(/babado/.test('menina que babado'));
+            console.log(/babado/.test('menina que babdo'));
+            
+            let qqrcoisa = 'hmm kk bjsssss';
+            console.log(reg.test(qqrcoisa));
+
+            //procurando se existem numeros numa expressao
+            const reg1 = /[0-9]/;
+            console.log(reg1.test(qqrcoisa));
+            console.log(reg1.test('minho idade eh 87653871687'))
+
+           /*  Caracteres especiais
+            \d = valores numericos /[0-9]/
+            \w = qualquer caractere alfanumérico incluindo underline [A-Za-z0-9_]
+            \s = um único caractere de espaço em branco
+            \D = valores nao numericos /[^0-9]/
+            \W = não caractere.  [^A-Za-z0-9_]. Ex: %
+            \S = caractere que nao seja espaco em branco
+            . = qualquer caracter, exceto o caracter de nova linha
+            */
+            const sReg = /\s/;
+            console.log(sReg.test(qqrcoisa));
+            console.log(sReg.test(' '));
+            console.log(sReg.test('ijshe'));
+            console.log(sReg.test('ijshe dgtyhu'));
+
+            //Operador NOT: verifico se algo NAO esta.OBS: nao eh muito preciso
+            const noA = /[^a]/;
+            console.log(noA.test(qqrcoisa));
+            console.log(noA.test('iuhasiuhsiu baba'));
+            console.log(noA.test('a'));
+
+            //Maior precisao: botar o valor entre chaves {}. OBS ainda achei estranho (linha 644)
+            function checaTel(numm){
+                const regTel = /\d{4,5}-\d{4}/;
+                console.log("O valor inserido " + numm + " eh " + regTel.test(numm));
+                console.log(regTel.exec(numm)); //Exec: verifica mais dados do padrao
+            }
+            checaTel('3345-2321');
+            checaTel('334567893-2765');
+            checaTel('jiksdhkushdiku');
+
+            //Exec: verifica mais dados do padrao
+            console.log(noA.exec(qqrcoisa));
+
+            //umaoutra forma de fazer isso pouco utilizada hj em dia eh usando MATCH
+            const 
+
+
+
+
+
+            
+
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+        </script>
+    </body>
+</html>
